@@ -1,4 +1,4 @@
-danne.stayskal.com
+linenoise.io
 =================
 
 This is the codebase that runs [Danne Stayskal's music site](http://linenoise.io/). It is developed using [nanoc](http://nanoc.stoneship.org/) and rsynced in static form to the server.
