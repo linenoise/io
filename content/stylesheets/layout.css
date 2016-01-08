@@ -172,7 +172,7 @@ footer                                          { margin: 10px 0px 0px 0px; padd
 footer aside, header aside                      { text-align: left; padding: 10px 0px; }
 footer aside p, header aside                    { margin: 10px 20px; }
 
-footer .contact, footer .social                 { height: 60px; padding: 0px; background-color: #DDD; }
+footer .contact, footer .social                 { height: 60px; padding: 0px; background-color: #EEE; }
 footer .social                                  { width: 140px; text-align: left; font-family: 'Open Sans Regular'; font-style: normal; font-size: 12pt; }
 footer .social img                              { vertical-align:middle; padding: 0px 10px 0px 5px; }
 footer .social a, footer .social a:visited      { display: block; color: black; font-size: 11pt; padding: 14px 10px 14px 10px; margin: 0px; text-decoration: none; }
