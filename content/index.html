@@ -1,0 +1,19 @@
+---
+title: Linenoise.io
+---
+
+<% items.select{|i| i.identifier =~ /\/sets\/.+/}.sort{|a,b| b.attributes[:date] <=> a.attributes[:date]}.each do |set| %>
+
+  <div class="set">
+    <div class="one-third column">
+      <h2><%= set.attributes[:title] %></h2>
+      <p><em>Released on <%= set.attributes[:date] %></em></p>
+      <p>Genres: <strong><%= set.attributes[:genres] %></strong></p>
+      <%= set.attributes[:description] %>
+    </div>
+		<div class='two-thirds column' style="align: left">
+      <%= set.attributes[:embed] %>
+    </div>
+  </div>
+
+<% end %>

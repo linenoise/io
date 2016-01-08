@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+	<channel>
+		<title>Linenoise</title>
+		<link>http://linenoise.io/</link>
+		<managingEditor>danne@linenoise.io (Danne Stayskal)</managingEditor>
+		<webMaster>danne@linenoise.io (Danne Stayskal)</webMaster>
+		<description>Linenoise.io sets</description>
+
+		<language>en-us</language>
+
+		<lastBuildDate><%= Time.now.rfc2822 %></lastBuildDate>
+		<ttl>60</ttl>
+
+		<generator>http://github.com/linenoise/io/</generator>
+		<copyright></copyright>
+
+		<% items.select{|i| i.identifier =~ /\/sets\/.+/}.sort{|a,b| b.attributes[:date] <=> a.attributes[:date]}[0..39].each do |set| %>
+			<item>
+				<title><%= set.attributes[:title] %></title>
+				<link>http://danne.stayskal.com<%= set.identifier %></link>
+				<guid>http://danne.stayskal.com<%= set.identifier %></guid>
+				<description><%= CGI.escapeHTML("#{set.attributes[:description]}<p><a href=\"http://linenoise.io/#{set.identifier}\">Listen to the set&hellip;</a></p>") %></description>
+				<pubDate><%= Time.parse(set.attributes[:date].to_s).rfc2822 %></pubDate>
+			</item>
+		<% end %>
+	</channel>
+</rss>

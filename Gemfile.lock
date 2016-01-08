@@ -1,0 +1,31 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    builder (3.2.2)
+    colored (1.2)
+    cri (2.7.0)
+      colored (~> 1.2)
+    kramdown (1.9.0)
+    mime-types (3.0)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2015.1120)
+    nanoc (3.8.0)
+      cri (~> 2.3)
+    rack (1.6.4)
+    rdiscount (2.1.8)
+    systemu (2.6.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  builder
+  kramdown
+  mime-types
+  nanoc (< 4)
+  rack
+  rdiscount
+  systemu
+
+BUNDLED WITH
+   1.10.6

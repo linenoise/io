@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+  <head>
+    <title><% if @item[:title] %><%= @item[:title] %><% else %>Danne Stayskal<% end %></title>
+
+    <!-- Meta -->
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Language" content="en" />
+    <meta name="description" content="<%= @item[:title] %>" />
+    <meta name="author" content="Danne Stayskal">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/skeleton.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/layout.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/lightbox.css" />
+
+    <!-- Alternates -->
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://linenoise.io/feed/" />
+
+    <!-- Shims -->
+    <!--[if lt IE 9]>
+      <script src="/javascript/html5shim.js"></script>
+    <![endif]-->
+
+    <!-- Icons -->
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/fimages/avicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- JavaScripts -->
+    <script src="/javascript/jquery-1.7.2.min.js"></script>
+    <script src="/javascript/lightbox.js"></script>
+
+  </head>
+  <body>
+    <div class="container">
+      <header class="site clearfix">
+        <a href="/"><img src="/images/logo_header.png" alt="Linenoise.io"></a>
+        <aside>
+          Linenoise is <a href="http://danne.stayskal.com/">Danne Stayskal</a>, a <a href="http://danne.stayskal.com/superpowers/">synesthetic</a> DJ&mdash;she sees what she hears and hears what she sees.<br />
+          She plays music that looks and sounds good.
+        </aside>
+      </header>
+
+      <div class="clearfix">
+      <%= yield %>
+      </div>
+
+      <footer class="clearfix">
+
+        <aside class="one-third vcard column" id="footer_logo_before">
+          <img src="/images/logo_square.png" alt="Linenoise" style="height: 300px; width: 300px; padding-bottom: 30px;"/>
+        </aside>
+
+        <aside class="two-thirds column">
+          <p>To invite or book a set, please contact <a href="mailto:booking@linenoise.io">booking@linenoise.io</a>.</p>
+          <p>This site is open source; its source code <a href="http://github.com/linenoise/io">is available on github</a>.</p>
+        </aside>
+
+        <aside class="contact one-third column">
+          <a href="https://www.facebook.com/linenoise.io/" rel="me" style="float:left; padding-right: 4px;"><img src="/images/icons/facebook.png" alt="Facebok">
+          <a href="https://twitter.com/linenoise_io" rel="me" style="float:left; padding-right: 4px;"><img src="/images/icons/twitter.png" alt="Twitter">
+          <a href="http://linenoise.io/feed/" style="float:left; padding-right: 4px;"><img src="/images/icons/feed.png" alt="RSS" /></a>
+        </aside>
+
+        <aside class="one-third vcard column" id="footer_logo_after" style="display:none">
+          <img src="/images/logo_square.png" alt="Linenoise" style="height: 300px; width: 300px; padding-bottom: 30px;"/>
+        </aside>
+
+      </footer>
+
+    </div>
+
+  </body>
+</html>
