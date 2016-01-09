@@ -60,20 +60,9 @@ Get it onto MixCloud:
 Get it onto Linenoise.io:
 
 1. Clone this repo.
-2. Add an HTML file in `content/sets` with this structure:
-
-  ---
-  title: title of the set (e.g. "Flooded Signal")
-  date: date it was released (ISO format, e.g. "2015-08-15")
-  genres: comma-separated list of genres in lower-case-dot format (e.g. electronica, uk.garage, techno...)
-  download: the download URL from AWS
-  description: |
-    <p>The HTML description goes here</p>
-  embed: |
-    The Mixcloud Embed code goes here
-  ---
-
+2. Add an HTML file in `content/sets` (just copy the structure from a different release). You'll need the title, date, genres, download link, description, and embed code.)
 3. Add above file to Version control (`git add content && git push origin master;`)
+4. `./push`
 
 Deployment
 ----------
