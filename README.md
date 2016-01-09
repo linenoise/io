@@ -32,6 +32,49 @@ This codebase uses nanoc to build a tree of static HTML, CSS, and JavaScript res
 
 This will automatically compile any changes made to the build and make them available through a lightweight webserver running at http://localhost:3000/.
 
+Uploading a Set
+---------------
+
+Play music. Dance (optional, recommended). Record the set (required).
+
+Materials:
+
+* MP3 recording (320 bitrate) of your set.
+* TXT track listing text file ("0:00 Artist - Track\n"...)
+* TXT genre listing (tech.house, dub.techno, uk.garage, ...)
+* HTML description of the set (when, where, link to event ...)
+* JPG cover image for Mixcloud
+
+Get it onto AWS:
+
+1. [Login to AWS S3](https://console.aws.amazon.com).
+2. Upload the set.
+3. Make it public.
+4. Set metadata: `Content-Type` is `application-octet-stream` and `Content-Disposition` is `attachment`. This should force most browsers (but sadly not all) to download rather than stream the set.
+
+Get it onto MixCloud:
+
+1. Upload set (along with track listing, cover image, etc) to MixCloud.
+2. Get the embed code for the set. Options to click: 100% width, Show Cover, Light Widget, Show Tracklist, Show Artwork. Options to make sure are un-clicked: Auto Play, Mini Player.
+
+Get it onto Linenoise.io:
+
+1. Clone this repo.
+2. Add an HTML file in `content/sets` with this structure:
+
+  ---
+  title: title of the set (e.g. "Flooded Signal")
+  date: date it was released (ISO format, e.g. "2015-08-15")
+  genres: comma-separated list of genres in lower-case-dot format (e.g. electronica, uk.garage, techno...)
+  download: the download URL from AWS
+  description: |
+    <p>The HTML description goes here</p>
+  embed: |
+    The Mixcloud Embed code goes here
+  ---
+
+3. Add above file to Version control (`git add content && git push origin master;`)
+
 Deployment
 ----------
 
