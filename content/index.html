@@ -10,8 +10,9 @@ title: Linenoise.io
       <p><em>Released on <%= set.attributes[:date] %></em></p>
       <p>Genres: <strong><%= set.attributes[:genres] %></strong></p>
       <%= set.attributes[:description] %>
+      <p><a class="button" href="<%= set.attributes[:download] %>">Download this set</a></p>
     </div>
-		<div class='two-thirds column' style="align: left">
+    <div class='two-thirds column' style="align: left">
       <%= set.attributes[:embed] %>
     </div>
   </div>
