@@ -10,7 +10,7 @@ Prerequisites: [OpenSSH](http://www.openssh.com/), [Rsync](http://rsync.samba.or
 
 First, clone this codebase
 
-	$ git clone git://github.com/linenoise/io
+	$ git clone git@github.com:linenoise/io linenoise-io
 
 Second, accept the RVM version and gemset, building Ruby 1.9.2 if you need
 
