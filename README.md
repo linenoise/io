@@ -50,7 +50,7 @@ Get it onto AWS:
 1. [Login to AWS S3](https://console.aws.amazon.com).
 2. Upload the set.
 3. Make it public.
-4. Set metadata: `Content-Type` is `application-octet-stream` and `Content-Disposition` is `attachment`. This should force most browsers (but sadly not all) to download rather than stream the set.
+4. Set metadata: `Content-Type` is `application/octet-stream` and `Content-Disposition` is `attachment`. This should force most browsers (but sadly not all) to download rather than stream the set.
 
 Get it onto MixCloud:
 
