@@ -10,11 +10,11 @@ Prerequisites: [OpenSSH](http://www.openssh.com/), [Rsync](http://rsync.samba.or
 
 First, clone this codebase
 
-	$ git clone git@github.com/linenoise/io
+	$ git clone git@github.com:linenoise/io.git linenoise-io
 
-Second, accept the RVM version and gemset, building Ruby 1.9.2 if you need
+Second, accept the RVM version and gemset, building Ruby 2.2.2 if you need
 
-	$ rvm install ruby-1.9.2-p180
+	$ rvm install ruby-2.2.2
 
 Finally, install Bundler and the rest of the gemset
 
