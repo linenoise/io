@@ -1,18 +1,33 @@
 ---
 title: Linenoise.io
 ---
+<h2>Upcoming sets</h2>
 
+<table>
+<tr><td>6/11/2016</td><td>The cabin</td><td>Orcas Island, WA</td></tr>
+<tr><td>6/18/2016</td><td>Uninhabited Island</td></tr>
+<tr><td>6/26/2016</td><td>ABD 9</td></tr>
+<tr><td>6/29/2016</td><td>Critical Northwest Radio, 4pm-8pm</td><td>Granite Falls, WA</td></tr>
+<tr><td>6/30/2016</td><td>Critical Northwest Radio, noon-4pm</td><td>Granite Falls, WA</td></tr>
+<tr><td>7/1/2016</td><td>Goodness</td></tr>
+<tr><td>8/5/2016</td><td>Floodland</td></tr>
+<tr><td>8/6/2016</td><td>FNS</td></tr>
+<tr><td>9/2/2016</td><td>Burning Man</td><td>Black Rock City, NV</td></tr>
+<!--<tr><td>10/8/2016</td><td>SeaCompression</td><td>Seattle, WA</td></tr> -->
+</table>
+
+<h2>Past sets</h2>
 <% items.select{|i| i.identifier =~ /\/sets\/.+/}.sort{|a,b| b.attributes[:date] <=> a.attributes[:date]}.each do |set| %>
 
   <div class="set">
     <div class="one-third column">
-      <h2><%= set.attributes[:title] %></h2>
+      <h3><%= set.attributes[:title] %></h3>
       <p><em>Released on <%= set.attributes[:date] %></em></p>
       <p>Genres: <strong><%= set.attributes[:genres] %></strong></p>
       <%= set.attributes[:description] %>
       <p><a class="button" href="<%= set.attributes[:download] %>">Download this set</a></p>
     </div>
-    <div class='two-thirds column' style="align: left">
+    <div class='two-thirds column' style="align: left; margin-bottom: 0px;">
       <%= set.attributes[:embed] %>
     </div>
   </div>

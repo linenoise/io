@@ -109,8 +109,8 @@ article.blog a:visited, article.blog a:hover    { text-decoration: underline; }
 a.button, a.button:hover                        { color: black; background: #eee;}
 h1, h2, h3, h4, h5                              { margin-left: 10px; font-family: 'Open Sans Bold'; }
 h1                                              { font-size: 180%; margin-bottom: 0px; }
-h2                                              { font-size: 150%; }
-h3                                              { font-size: 130%; font-family: 'Open Sans Italic'; }
+h2                                              { font-size: 150%; margin: 20px 10px 20px 20px; border-bottom: 5px solid black;}
+h3                                              { font-size: 130%; font-family: 'Open Sans Bold'; }
 h4                                              { font-size: 130%; }
 h5                                              { font-size: 100%; }
 ul                                              { list-style: disc outside; margin-left: 30px; }
@@ -147,7 +147,6 @@ audio                                           { padding: 0.5em 0em 0em 10px; w
 ================================================== */
 header.site img                                 { width: 590px; height: 137px; margin-left: 10px; border: 15px solid #333; }
 header.site                                     { padding: 25px 0px 0px 0px; margin: 20px 10px 20px 10px; }
-header aside                                    { margin-left: 10px !important; margin-right: 0px !important; padding: 10px 25px !important; border: 15px solid #333; background-color: #FFF; text-align: left !important; font-family: 'Open Sans Bold'; font-style: normal;}
 
 
 /* Audio players
@@ -171,6 +170,7 @@ nav a.right                                     { float:right; }
 footer                                          { margin: 10px 0px 0px 0px; padding-bottom: 10px; }
 footer aside, header aside                      { text-align: left; padding: 10px 0px; }
 footer aside p, header aside                    { margin: 10px 20px; }
+footer aside#danne                              { margin-left: 10px !important; margin-right: 10px !important; padding: 10px 25px !important; border: 15px solid #333; background-color: #FFF; text-align: left !important; font-family: 'Open Sans Bold'; font-style: normal;}
 
 footer .contact, footer .social                 { height: 60px; padding: 0px; background-color: #EEE; }
 footer .social                                  { width: 140px; text-align: left; font-family: 'Open Sans Regular'; font-style: normal; font-size: 12pt; }
