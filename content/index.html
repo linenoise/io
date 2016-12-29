@@ -1,16 +1,16 @@
 ---
 title: Linenoise.io
 ---
-<h2>Upcoming sets</h2>
+<!-- <h2>Upcoming sets</h2>
 
 <table>
-<!-- <tr><td>__DATE__</td><td><a href="__LINK__">__EVENT_NAME__</a></td><td>__PLACE__</td></tr> -->
-<tr><td>12/10/2016</td><td><a href="https://www.facebook.com/events/185767518534533/">Heliopause</a></td><td>Seattle, WA</td></tr>
-<tr><td>12/31/2016</td><td>New Year's Eve Cabin Event</td><td>Orcas Island, WA</td></tr>
+<tr><td>__DATE__</td><td><a href="__LINK__">__EVENT_NAME__</a></td><td>__PLACE__</td></tr>
 </table>
 
 <h2>Past sets</h2>
-<% items.select{|i| i.identifier =~ /\/sets\/.+/}.sort{|a,b| b.attributes[:date] <=> a.attributes[:date]}.each do |set| %>
+ -->
+
+ <% items.select{|i| i.identifier =~ /\/sets\/.+/}.sort{|a,b| b.attributes[:date] <=> a.attributes[:date]}.each do |set| %>
 
   <div class="set">
     <div class="one-third column">
