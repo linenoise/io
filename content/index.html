@@ -1,16 +1,9 @@
 ---
-title: Linenoise
+title: Music for the tech sector
 ---
 <h2>Upcoming sets</h2>
 
 <table>
-<!-- <tr><td>__DATE__</td><td><a href="__LINK__">__EVENT_NAME__</a></td><td>__PLACE__</td></tr> -->
-<tr><td>2/23/2017</td><td><a href="http://www.spinspin.wtf/">Spin Spin Radio Show</a></td><td>Psychedelic Techno</td><td>Seattle, WA</td></tr>
-<tr><td>3/1/2017</td><td>Losar (Tibetan New Year's)</td><td>Dub Techno</td><td>Seattle, WA</td></tr>
-<tr><td>3/14/2017</td><td><a href="https://greimusic.com/">Spoondrift Radio Show</a></td><td>Ambient</td><td>Seattle, WA</td></tr>
-<tr><td>3/31/2017</td><td><a href="https://www.mokedo.org/calendar-of-events">Mokedo</a></td><td>Ambient</td><td>Seattle, WA</td></tr>
-<tr><td>5/9/2017</td><td><a href="https://greimusic.com/">Spoondrift Radio Show</a></td><td>Techno</td><td>Seattle, WA</td></tr>
-<tr><td>5/27/2017</td><td><a href="https://www.facebook.com/events/1313071565473593/">Warehouse Party</a></td><td>Techno</td><td>SODO, Seattle</td></tr>
 <tr><td>6/3/2017</td><td>Twilight Gathering</td><td>Downtempo</td><td>Washington</td></tr>
 <tr><td>6/24/2017</td><td>ABD 10</td><td>Downtempo</td><td>Washington</td></tr>
 <tr><td>7/6/2017</td><td>Tautology at <a href="http://criticalnw.org.org/">Critical Northwest</a></td><td>Ambient</td><td>Granite Falls, WA</td></tr>
@@ -20,22 +13,27 @@ title: Linenoise
 <tr><td>9/1/2017</td><td>Tautology at <a href="http://burningman.org/">Burning Man</a></td><td>Modern Classical</td><td>Black Rock City, NV</td></tr>
 </table>
 
-<h2>Past sets</h2>
+<h2 style="margin-bottom: 0px;">Past sets</h2>
 
+<aside style="margin: 0px 10px 0px 20px; padding: 5px 10px; font-weight: bold;"><a href="http://linenoise.io/feed/">RSS feed of past sets</a></aside>
 
  <% items.select{|i| i.identifier =~ /\/sets\/.+/}.sort{|a,b| b.attributes[:date] <=> a.attributes[:date]}.each do |set| %>
 
-  <div class="set">
-    <div class="one-third column">
-      <h3><%= set.attributes[:title] %></h3>
-      <p><em>Released on <%= set.attributes[:date] %></em></p>
-      <p>Genres: <strong><%= set.attributes[:genres] %></strong></p>
-      <%= set.attributes[:description] %>
-      <p><a class="button" href="<%= set.attributes[:download] %>">Download this set</a></p>
+    <div class="eight columns set <%= set.attributes[:mood] %>">
+      <h3><a href="<%= set.identifier %>index.html"><%= set.attributes[:title] %></a></h3>
+      <div>
+        <span class="mood"><%= set.attributes[:mood] %></span>
+        <span class="genres">(<%= set.attributes[:genres] %>)</span>
+      </div>
+      <div class="date">Released: <%= set.attributes[:date] %></div>
+      <div class="time">Time: <%= set.attributes[:time] %></div>
+      <div class="listen">
+        <a class="button" href="<%= set.attributes[:download] %>">Download this set</a>
+        <a class="button" href="<%= set.identifier %>index.html" target="new">Listen online</a>
+        <% unless set.attributes[:tracklist].nil? then %>
+          <a class="button" href="<%= set.identifier %>index.html">Tracklist</a>
+        <% end %>
+      </div>
     </div>
-    <div class='two-thirds column' style="align: left; margin-bottom: 0px;">
-      <%= set.attributes[:embed] %>
-    </div>
-  </div>
 
 <% end %>

@@ -140,19 +140,26 @@ aside                                           { background: #EEE; margin-botto
 .small.intro                                    { height: 152px; }
 .intro ul                                       { margin-top: 2em; }
 
-iframe                                          { height: 400px; width: 400px; }
 audio                                           { padding: 0.5em 0em 0em 10px; width: 226px; }
+
+/* Sets
+================================================== */
+div.set h3                                      { margin-bottom: 0px; }
+div.set div                                     { margin-left: 11px; }
+div.set div span.genres                         { font-style: oblique; }
+div.set div span.mood                           { font-weight: bold; color: #333; font-style: oblique; }
+div.set div.date, div.set div.time              { font-size: 90%; }
+div.set div.time                                { margin-top: 0px; }
+div.set div.date                                { margin-top: 4px; }
+div.set div.listen                              { border-bottom: 1px solid #EEE; margin-bottom: 10px; padding-bottom: 2px;}
+div.full.set                                    { margin-left: 10px; }
+div.full.set pre                                { margin-left: 12px; margin-bottom: 5px; }
+div.full.set div.embed                          { margin-right: 10px; margin-bottom: 5px; }
 
 /* Header
 ================================================== */
-header.site img                                 { width: 590px; height: 137px; margin-left: 10px; border: 15px solid #333; }
+header.site img                                 { width: 330px; height: 87px; margin-left: 10px; border: 15px solid #333; }
 header.site                                     { padding: 25px 0px 0px 0px; margin: 20px 10px 20px 10px; }
-
-
-/* Audio players
-================================================== */
-
-iframe                                          { height: 400px; width: 620px; }
 
 
 /* Navigation
@@ -170,7 +177,7 @@ nav a.right                                     { float:right; }
 footer                                          { margin: 10px 0px 0px 0px; padding-bottom: 10px; }
 footer aside, header aside                      { text-align: left; padding: 10px 0px; }
 footer aside p, header aside                    { margin: 10px 20px; }
-footer aside#danne                              { margin-left: 10px !important; margin-right: 10px !important; padding: 10px 25px !important; border: 15px solid #333; background-color: #FFF; text-align: left !important; font-family: 'Open Sans Bold'; font-style: normal;}
+footer aside#danne                              { margin-left: 20px !important; margin-right: 10px !important; padding: 10px 15px !important; border: 15px solid #EEE; background-color: #FFF; text-align: left !important; font-family: 'Open Sans Bold'; font-style: normal;}
 
 footer .contact, footer .social                 { height: 60px; padding: 0px; background-color: #EEE; }
 footer .social                                  { width: 140px; text-align: left; font-family: 'Open Sans Regular'; font-style: normal; font-size: 12pt; }
@@ -212,9 +219,6 @@ footer aside.vcard p                            { font-family: 'Open Sans Bold';
     /* Stretch the social links in the footer to full-width */
     footer .social                              { width: 172px; }
 
-    /* Narrow the audio players */
-    iframe                                      { height: 400px; width: 490px; }
-
     /* Narrow the footer logo */
     #footer_logo_before img                     { width: 240px !important; height: 240px !important; }
 
@@ -246,7 +250,6 @@ footer aside.vcard p                            { font-family: 'Open Sans Bold';
 
     /* Narrow the audio players */
     div.two-thirds.column { margin-left: 0px; }
-    iframe                                      { height: 400px; width: 420px; }
 
     /* Narrow the header image */
     header.site img                             { width: 340px; height: 90px; }
@@ -284,7 +287,6 @@ footer aside.vcard p                            { font-family: 'Open Sans Bold';
 
     /* Narrow the audio players */
     div.two-thirds.column { margin-left: 0px; }
-    iframe                                      { height: 400px; width: 300px; }
 
     /* Narrow the header image */
     header.site img                             { width: 240px; height: 63px; }
