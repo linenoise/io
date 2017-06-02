@@ -109,7 +109,7 @@ article.blog a:visited, article.blog a:hover    { text-decoration: underline; }
 a.button, a.button:hover                        { color: black; background: #eee;}
 h1, h2, h3, h4, h5                              { margin-left: 10px; font-family: 'Open Sans Bold'; }
 h1                                              { font-size: 180%; margin-bottom: 0px; }
-h2                                              { font-size: 150%; margin: 20px 10px 20px 20px; border-bottom: 5px solid black;}
+h2                                              { font-size: 150%; margin: 10px 10px 0px 20px; border-bottom: 5px solid black;}
 h3                                              { font-size: 130%; font-family: 'Open Sans Bold'; }
 h4                                              { font-size: 130%; }
 h5                                              { font-size: 100%; }
@@ -141,20 +141,17 @@ aside                                           { background: #EEE; margin-botto
 .intro ul                                       { margin-top: 2em; }
 
 audio                                           { padding: 0.5em 0em 0em 10px; width: 226px; }
+aside.danne                                     { margin: 10px 10px 0px 20px; padding: 10px 15px !important; border: 15px solid #EEE; background-color: #FFF; text-align: left !important; }
 
 /* Sets
 ================================================== */
-div.set h3                                      { margin-bottom: 0px; }
-div.set div                                     { margin-left: 11px; }
-div.set div span.genres                         { font-style: oblique; }
-div.set div span.mood                           { font-weight: bold; color: #333; font-style: oblique; }
-div.set div.date, div.set div.time              { font-size: 90%; }
-div.set div.time                                { margin-top: 0px; }
-div.set div.date                                { margin-top: 4px; }
-div.set div.listen                              { border-bottom: 1px solid #EEE; margin-bottom: 10px; padding-bottom: 2px;}
+div.set table                                   { margin-left: 8px; margin-bottom: 10px; }
+div.set td, div.set th                          { padding: 2px; }
+div.set th                                      { text-align: left; }
+div.set div.listen                              { border-bottom: 1px solid #EEE; margin-bottom: 10px; padding-bottom: 2px; margin-left: 10px; }
 div.full.set                                    { margin-left: 10px; }
 div.full.set pre                                { margin-left: 12px; margin-bottom: 5px; }
-div.full.set div.embed                          { margin-right: 10px; margin-bottom: 5px; }
+div.full.set div.embed                          { margin-left: 10px; margin-right: 10px; margin-bottom: 5px; }
 
 /* Header
 ================================================== */
@@ -177,7 +174,6 @@ nav a.right                                     { float:right; }
 footer                                          { margin: 10px 0px 0px 0px; padding-bottom: 10px; }
 footer aside, header aside                      { text-align: left; padding: 10px 0px; }
 footer aside p, header aside                    { margin: 10px 20px; }
-footer aside#danne                              { margin-left: 20px !important; margin-right: 10px !important; padding: 10px 15px !important; border: 15px solid #EEE; background-color: #FFF; text-align: left !important; font-family: 'Open Sans Bold'; font-style: normal;}
 
 footer .contact, footer .social                 { height: 60px; padding: 0px; background-color: #EEE; }
 footer .social                                  { width: 140px; text-align: left; font-family: 'Open Sans Regular'; font-style: normal; font-size: 12pt; }

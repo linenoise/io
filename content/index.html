@@ -1,7 +1,6 @@
 ---
-title: Music for the tech sector
 ---
-<h2 style="margin-bottom: 0px;">Upcoming sets</h2>
+<h2>Upcoming sets</h2>
 
 <aside style="margin: 0px 10px 0px 20px; padding: 5px 10px;"><a href="/calendar/">Calendar feed of upcoming sets</a></aside>
 
@@ -16,23 +15,31 @@ title: Music for the tech sector
 <% end %>
 </table>
 
-<h2 style="margin-bottom: 0px;">Past sets</h2>
+<h2>Past sets</h2>
 
 <aside style="margin: 0px 10px 0px 20px; padding: 5px 10px;"><a href="/feed/">RSS feed of past sets</a></aside>
 
- <% items.select{|i| i.identifier =~ /\/sets\/.+/}.sort{|a,b| b.attributes[:date] <=> a.attributes[:date]}.each do |set| %>
+<% items.select{|i| i.identifier =~ /\/sets\/.+/}.sort{|a,b| b.attributes[:date] <=> a.attributes[:date]}.each do |set| %>
 
     <div class="eight columns set <%= set.attributes[:mood] %>">
       <h3><a href="<%= set.identifier %>index.html"><%= set.attributes[:title] %></a></h3>
-      <div>
-        <span class="mood"><%= set.attributes[:mood] %></span>
-        <span class="genres">(<%= set.attributes[:genres] %>)</span>
-      </div>
-      <div class="date">Released: <%= set.attributes[:date] %></div>
-      <div class="time">Time: <%= set.attributes[:time] %></div>
+      <table>
+        <tr>
+          <th>Genres</th>
+          <td><%= set.attributes[:genres] %></td>
+        </tr>
+        <tr>
+          <th>Mood</th>
+          <td><%= set.attributes[:mood] %></td>
+        </tr>
+        <tr>
+          <th>Length</th>
+          <td><%= set.attributes[:time] %></td>
+        </tr>
+      </table>
       <div class="listen">
         <a class="button" href="<%= set.attributes[:download] %>">Download this set</a>
-        <a class="button" href="<%= set.identifier %>index.html" target="new">Listen online</a>
+        <a class="button" href="<%= set.identifier %>index.html">Listen online</a>
         <% unless set.attributes[:tracklist].nil? then %>
           <a class="button" href="<%= set.identifier %>index.html">Tracklist</a>
         <% end %>
