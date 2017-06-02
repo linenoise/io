@@ -1,21 +1,24 @@
 ---
 title: Music for the tech sector
 ---
-<h2>Upcoming sets</h2>
+<h2 style="margin-bottom: 0px;">Upcoming sets</h2>
+
+<aside style="margin: 0px 10px 0px 20px; padding: 5px 10px;"><a href="/calendar/">Calendar feed of upcoming sets</a></aside>
 
 <table>
-<tr><td>6/3/2017</td><td>Twilight Gathering</td><td>Downtempo</td><td>Washington</td></tr>
-<tr><td>6/24/2017</td><td>ABD 10</td><td>Downtempo</td><td>Washington</td></tr>
-<tr><td>7/6/2017</td><td>Tautology at <a href="http://criticalnw.org.org/">Critical Northwest</a></td><td>Ambient</td><td>Granite Falls, WA</td></tr>
-<tr><td>7/7/2017</td><td>Tautology at <a href="http://criticalnw.org.org/">Critical Northwest</a></td><td>Psychedelic Techno</td><td>Granite Falls, WA</td></tr>
-<tr><td>7/29/2017</td><td><a href="http://www.chillography.net/blog/">Chillography</a> with Emma Staarbird</td><td>Dub Techno</td><td>Seattle, WA</td></tr>
-<tr><td>8/31/2017</td><td>Tautology at <a href="http://burningman.org/">Burning Man</a></td><td>Techno</td><td>Black Rock City, NV</td></tr>
-<tr><td>9/1/2017</td><td>Tautology at <a href="http://burningman.org/">Burning Man</a></td><td>Modern Classical</td><td>Black Rock City, NV</td></tr>
+<% items.select{|i| i.identifier =~ /\/calendar\/.+/}.sort{|a,b| a.attributes[:date] <=> b.attributes[:date]}.each do |event| %>
+  <tr>
+    <td><%= event.attributes[:date] %></td>
+    <td><%= event.attributes[:event] %></td>
+    <td><%= event.attributes[:genre] %></td>
+    <td><%= event.attributes[:place] %></td>
+  </tr>
+<% end %>
 </table>
 
 <h2 style="margin-bottom: 0px;">Past sets</h2>
 
-<aside style="margin: 0px 10px 0px 20px; padding: 5px 10px; font-weight: bold;"><a href="http://linenoise.io/feed/">RSS feed of past sets</a></aside>
+<aside style="margin: 0px 10px 0px 20px; padding: 5px 10px;"><a href="/feed/">RSS feed of past sets</a></aside>
 
  <% items.select{|i| i.identifier =~ /\/sets\/.+/}.sort{|a,b| b.attributes[:date] <=> a.attributes[:date]}.each do |set| %>
 
