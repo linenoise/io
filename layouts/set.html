@@ -56,7 +56,7 @@
           <p>You might also like my other <strong><%= item.attributes[:mood] %></strong> sets:</p>
 
           <table>
-          <% items.select{|i| i.identifier =~ /\/sets\/.+/}.sort{|a,b| b.attributes[:title] <=> a.attributes[:title]}.keep_if{|set| (set.attributes[:mood] == item.attributes[:mood]) && (set.identifier != item.identifier)}.each do |set| %>
+          <% items.select{|i| i.identifier =~ /\/sets\/.+/}.sort{|a,b| b.attributes[:title] <=> a.attributes[:title]}.keep_if{|set| (set.attributes[:mood] == item.attributes[:mood]) && (set.identifier != item.identifier)}.sort{|a,b| a.attributes[:title] <=> b.attributes[:title]}.each do |set| %>
             <tr>
               <th><a href="<%= set.identifier %>"><%= set.attributes[:title] %></a></th>
               <td><%= set.attributes[:time] %></td>
