@@ -101,7 +101,7 @@
 
 body, p, tr, th, td      { color: #444; font-family: 'Open Sans Regular'; }
 em                                              { font-family: 'Open Sans Italic'; }
-strong, h1, h2, h3, h4, h5                                          { font-family: 'Open Sans Bold'; }
+strong, h1, h2, h3, h4, h5                      { font-family: 'Open Sans Bold'; }
 p                                               { margin: 10px 10px 20px 10px; padding: 0px; }
 a, a:active, a:visited, a:hover                 { color: #104577; text-decoration: none; }
 article.blog a, article.blog a:active,
@@ -148,10 +148,19 @@ aside.danne                                     { margin: 10px 10px 0px 20px; pa
 div.set table                                   { margin-left: 8px; margin-bottom: 10px; }
 div.set td, div.set th                          { padding: 2px; }
 div.set th                                      { text-align: left; }
-div.set div.listen                              { border-bottom: 1px solid #EEE; margin-bottom: 10px; padding-bottom: 2px; margin-left: 10px; }
+div.set div.listen                              { margin-bottom: 20px; padding-bottom: 2px; margin-left: 10px; }
 div.full.set                                    { margin-left: 10px; }
 div.full.set pre                                { margin-left: 12px; margin-bottom: 5px; }
 div.full.set div.embed                          { margin-left: 10px; margin-right: 10px; margin-bottom: 5px; }
+div.set                                         { margin-right: 10px; }
+div.set.full table                              { margin-top: 10px; }
+div.set table tr th                             { width: 50px; }
+div.set table tr td, div.set table tr th        { padding-right: 10px; }
+div.set h3 a                                    { color: #000; }
+div.set h2                                      { margin: 10px 10px 0px 10px; border-bottom: 0px; }
+div.set.chill h3, div.set.chill h1              { border-bottom: 5px solid #d7e7ee; }
+div.set.focus h3, div.set.focus h1              { border-bottom: 5px solid #dfd7ee; }
+div.set.dance h3, div.set.dance h1              { border-bottom: 5px solid #eed7e0; }
 
 /* Header
 ================================================== */

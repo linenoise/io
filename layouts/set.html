@@ -16,20 +16,20 @@
 
           <table>
             <tr>
-              <th>Released</th>
-              <td><%= item.attributes[:date] %></td>
+              <th>Mood</th>
+              <td><%= item.attributes[:mood] %></td>
             </tr>
             <tr>
               <th>Genres</th>
               <td><%= item.attributes[:genres] %></td>
             </tr>
             <tr>
-              <th>Mood</th>
-              <td><%= item.attributes[:mood] %></td>
-            </tr>
-            <tr>
               <th>Length</th>
               <td><%= item.attributes[:time] %></td>
+            </tr>
+            <tr>
+              <th>Released</th>
+              <td><%= item.attributes[:date] %></td>
             </tr>
           </table>
 
@@ -42,24 +42,28 @@
     		  </div>
 
           <% unless item.attributes[:tracklist].nil? then %>
-          	<h3>Tracklist</h3>
+          	<h2>Tracklist</h2>
           	<pre><%= item.attributes[:tracklist] %></pre>
           <% end %>
 
-          <h3>Listen online</h3>
+          <h2>Listen online</h2>
           <div class="embed">
     				<iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Flinenoise-io%2F<%= item.attributes[:stream].split('/')[-1] %>%2F&hide_cover=1&light=1" frameborder="0"></iframe>
       	  </div>
 
-          <h3>Other sets</h3>
+          <h2>Other sets</h2>
           
           <p>You might also like my other <strong><%= item.attributes[:mood] %></strong> sets:</p>
 
-          <ul>
+          <table>
           <% items.select{|i| i.identifier =~ /\/sets\/.+/}.sort{|a,b| b.attributes[:title] <=> a.attributes[:title]}.keep_if{|set| (set.attributes[:mood] == item.attributes[:mood]) && (set.identifier != item.identifier)}.each do |set| %>
-            <li><a href="<%= set.identifier %>"><%= set.attributes[:title] %></a></li>
+            <tr>
+              <th><a href="<%= set.identifier %>"><%= set.attributes[:title] %></a></th>
+              <td><%= set.attributes[:time] %></td>
+              <td><%= set.attributes[:genres] %></td>
+            </tr>
           <% end %>
-          </ul>
+          </table>
 
   	    </div>
       </div>

@@ -21,28 +21,30 @@
 
 <% items.select{|i| i.identifier =~ /\/sets\/.+/}.sort{|a,b| b.attributes[:date] <=> a.attributes[:date]}.each do |set| %>
 
-    <div class="eight columns set <%= set.attributes[:mood] %>">
-      <h3><a href="<%= set.identifier %>index.html"><%= set.attributes[:title] %></a></h3>
-      <table>
-        <tr>
-          <th>Genres</th>
-          <td><%= set.attributes[:genres] %></td>
-        </tr>
-        <tr>
-          <th>Mood</th>
-          <td><%= set.attributes[:mood] %></td>
-        </tr>
-        <tr>
-          <th>Length</th>
-          <td><%= set.attributes[:time] %></td>
-        </tr>
-      </table>
-      <div class="listen">
-        <a class="button" href="<%= set.attributes[:download] %>">Download this set</a>
-        <a class="button" href="<%= set.identifier %>index.html">Listen online</a>
-        <% unless set.attributes[:tracklist].nil? then %>
-          <a class="button" href="<%= set.identifier %>index.html">Tracklist</a>
-        <% end %>
+    <div class="eight columns">
+      <div class="<%= set.attributes[:mood] %> set">
+        <h3><a href="<%= set.identifier %>index.html"><%= set.attributes[:title] %></a></h3>
+        <table>
+          <tr class="<%= set.attributes[:mood] %>">
+            <th>Mood</th>
+            <td><%= set.attributes[:mood] %></td>
+          </tr>
+          <tr>
+            <th>Genres</th>
+            <td><%= set.attributes[:genres] %></td>
+          </tr>
+          <tr>
+            <th>Length</th>
+            <td><%= set.attributes[:time] %></td>
+          </tr>
+        </table>
+        <div class="listen">
+          <a class="button" href="<%= set.attributes[:download] %>">Download this set</a>
+          <a class="button" href="<%= set.identifier %>index.html">Listen online</a>
+          <% unless set.attributes[:tracklist].nil? then %>
+            <a class="button" href="<%= set.identifier %>index.html">Tracklist</a>
+          <% end %>
+        </div>
       </div>
     </div>
 
