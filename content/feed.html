@@ -18,6 +18,8 @@
 		<% items.select{|i| i.identifier =~ /\/sets\/.+/}.sort{|a,b| b.attributes[:date] <=> a.attributes[:date]}[0..39].each do |set| %>
 			<item>
 				<title><%= set.attributes[:title] %></title>
+				<itunes:author>Linenoise</itunes:author>
+				<itunes:email>danne@stayskal.com</itunes:email>
 				<link>http://linenoise.io<%= set.identifier %></link>
 				<guid>http://linenoise.io<%= set.identifier %></guid>
 				<description><%= CGI.escapeHTML("#{set.attributes[:description]}<p><a href=\"http://linenoise.io/#{set.identifier}\">Listen to the set&hellip;</a></p>") %></description>
