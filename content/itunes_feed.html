@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+	<channel>
+
+		<title>Linenoise</title>
+
+		<description>Linenoise (Danne Stayskal) is a synaesthetic DJ. She sees what she hears and plays what looks good. Linenoise.io is where she publishes her sets: ambient, classical, downtempo, experimental, house, and techno. Charting regularly in many genres, she brings the style of someone who sees music differently. Find her in iTunes!</description>
+
+		<link>http://linenoise.io/</link>
+		<language>en-us</language>
+
+		<lastBuildDate><%= Time.now.rfc2822 %></lastBuildDate>
+		<pubDate><%= Time.now.rfc2822 %></pubDate>
+		<ttl>60</ttl>
+
+		<docs>http://blogs.law.harvard.edu/tech/rss</docs>
+		<webMaster>danne@stayskal.com</webMaster>
+		<itunes:author>Linenoise</itunes:author>
+		<itunes:email>danne@stayskal.com</itunes:email>
+		<itunes:explicit>no</itunes:explicit>
+		<itunes:category text="Music" />
+		<itunes:owner>
+			<itunes:name>Linenoise</itunes:name>
+			<itunes:email>danne@stayskal.com</itunes:email>
+		</itunes:owner>
+
+		<itunes:image href="http://linenoise.io/images/logo_for_googleplay.jpg"/>
+
+		<% items.select{|i| i.identifier =~ /\/sets\/.+/}.sort{|a,b| b.attributes[:date] <=> a.attributes[:date]}[0..39].each do |set| %>
+
+		<item>
+			<title><%= set.attributes[:title] %></title>
+			<link>http://linenoise.io<%= set.identifier %></link>
+			<guid>http://linenoise.io<%= set.identifier %></guid>
+			<description><%= CGI.escapeHTML("#{set.attributes[:description]}") %></description>
+			<enclosure url="<%= set.attributes[:download] %>" length="<%= set.attributes[:file_size_bytes] %>" type="audio/x-mp3"/>
+			<category>Music</category>
+			<pubDate><%= Time.parse(set.attributes[:date].to_s).rfc2822 %></pubDate>
+
+			<itunes:author>Linenoise</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration><%= set.attributes[:time] %></itunes:duration>
+		</item>
+		<% end %>
+	</channel>
+</rss>
