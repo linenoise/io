@@ -1,5 +1,5 @@
-<?xml version="1.0"?>
-<rss version="2.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0" version="2.0">
 	<channel>
 		<title>Linenoise</title>
 		<link>http://linenoise.io/</link>
@@ -27,6 +27,7 @@
 				<guid>http://linenoise.io<%= set.identifier %></guid>
 				<description><%= CGI.escapeHTML("#{set.attributes[:description]}<p><a href=\"http://linenoise.io/#{set.identifier}\">Listen to the set&hellip;</a></p>") %></description>
 				<itunes:summary><%= CGI.escapeHTML("#{set.attributes[:description]}") %></itunes:summary>
+				<itunes:explicit>no</itunes:explicit>
 
 				<enclosure url="<%= set.attributes[:download] %>" length="<%= set.attributes[:file_size_bytes] %>" type="audio/x-mp3"/>
 
