@@ -5,8 +5,8 @@
 		<link>http://linenoise.io/</link>
 		<language>en-us</language>
 
-		<image>http://linenoise.io/images/logo_round.jpg</image>
-		<googleplay:image>http://linenoise.io/images/logo_round.jpg</googleplay:image>
+		<image>http://linenoise.io/images/logo_for_googleplay.jpg</image>
+		<googleplay:image>http://linenoise.io/images/logo_for_googleplay.jpg</googleplay:image>
 
 		<description>Linenoise (Danne Stayskal) is a synaesthetic DJ. She sees what she hears and plays what looks good. Linenoise.io is where she publishes her sets: ambient, classical, downtempo, experimental, house, and techno. Charting regularly in many genres, she brings the style of someone who sees music differently.</description>
 		<googleplay:description>Linenoise (Danne Stayskal) is a synaesthetic DJ. She sees what she hears and plays what looks good. Linenoise.io is where she publishes her sets: ambient, classical, downtempo, experimental, house, and techno. Charting regularly in many genres, she brings the style of someone who sees music differently. Find her on Google Play Music!</googleplay:description>
@@ -34,8 +34,8 @@
 				<googleplay:email>danne@stayskal.com</googleplay:email>
 				<description><%= CGI.escapeHTML("#{set.attributes[:description]}<p><a href=\"http://linenoise.io/#{set.identifier}\">Listen to the set&hellip;</a></p>") %></description>
 				<googleplay:description><%= CGI.escapeHTML("#{set.attributes[:description]}") %></googleplay:description>
-				<image>http://linenoise.io/images/logo_round.jpg</image>
-				<googleplay:image>http://linenoise.io/images/logo_round.jpg</googleplay:image>
+				<image>http://linenoise.io/images/logo_for_googleplay.jpg</image>
+				<googleplay:image>http://linenoise.io/images/logo_for_googleplay.jpg</googleplay:image>
 				<googleplay:explicit>no</googleplay:explicit>
 
 				<enclosure url="<%= set.attributes[:download] %>" length="<%= set.attributes[:file_size_bytes] %>" type="audio/x-mp3"/>
