@@ -8,9 +8,14 @@
 <% items.select{|i| i.identifier =~ /\/calendar\/.+/}.sort{|a,b| a.attributes[:date] <=> b.attributes[:date]}.each do |event| %>
   <tr>
     <td><%= event.attributes[:date] %></td>
-    <td><%= event.attributes[:event] %></td>
+    <td>
+      <% if event.attributes[:link] %><a href="<%= event.attributes[:link] %>"><% end %>
+      <%= event.attributes[:event] %>
+      <% if event.attributes[:link] %></a><% end %>
+    </td>
     <td><%= event.attributes[:genre] %></td>
     <td><%= event.attributes[:place] %></td>
+    <td><% if event.attributes[:notes] %><%= event.attributes[:notes] %><% end %></td>
   </tr>
 <% end %>
 </table>
