@@ -46,11 +46,6 @@
           	<pre><%= item.attributes[:tracklist] %></pre>
           <% end %>
 
-          <h2>Listen online</h2>
-          <div class="embed">
-    				<iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Flinenoise-io%2F<%= item.attributes[:stream].split('/')[-1] %>%2F&hide_cover=1&light=1" frameborder="0"></iframe>
-      	  </div>
-
           <h2>Other sets</h2>
           
           <p>You might also like my other <strong><%= item.attributes[:mood] %></strong> sets:</p>

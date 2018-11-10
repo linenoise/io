@@ -43,7 +43,6 @@ Materials:
 * TXT track listing text file ("0:00 Artist - Track\n"...)
 * TXT genre listing (tech.house, dub.techno, uk.garage, ...)
 * HTML description of the set (when, where, link to event ...)
-* JPG cover image for Mixcloud
 
 Get it onto AWS:
 
@@ -51,11 +50,6 @@ Get it onto AWS:
 2. Upload the set.
 3. Make it public.
 4. Set metadata: `Content-Type` is `application/octet-stream` and `Content-Disposition` is `attachment`. This should force most browsers (but sadly not all) to download rather than stream the set.
-
-Get it onto MixCloud:
-
-1. Upload set (along with track listing, cover image, etc) to MixCloud.
-2. Get the embed code for the set. Options to click: 100% width, Show Cover, Light Widget, Show Tracklist, Show Artwork. Options to make sure are un-clicked: Auto Play, Mini Player.
 
 Get it onto Linenoise.io:
 
