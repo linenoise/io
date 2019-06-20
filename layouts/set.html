@@ -32,14 +32,19 @@
               <td><%= item.attributes[:date] %></td>
             </tr>
           </table>
-
   	      <p>
   	      	<%= item.attributes[:description] %>
   	      </p>
 
-    		  <div style="margin-left: 10px;">
+          <h2>Download</h2>
+          <div style="margin-left: 10px;">
     		  	<a class="button" href="<%= item.attributes[:download] %>">Download this set</a><br />
     		  </div>
+
+          <h2>Play</h2>
+          <audio controls>
+            <source src="<%= item.attributes[:download] %>" type="audio/mpeg">
+          </audio> 
 
           <% unless item.attributes[:tracklist].nil? then %>
           	<h2>Tracklist</h2>
