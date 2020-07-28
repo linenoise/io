@@ -140,7 +140,7 @@ aside                                           { background: #EEE; margin-botto
 .small.intro                                    { height: 152px; }
 .intro ul                                       { margin-top: 2em; }
 
-audio                                           { padding: 0.5em 0em 0em 10px; width: 226px; }
+audio                                           { padding: 0.5em 0em 0em 10px; width: 100%; }
 aside.danne                                     { margin: 10px 10px 0px 20px; padding: 10px 15px !important; border: 15px solid #EEE; background-color: #FFF; text-align: left !important; }
 header.span                                     { margin: 10px 25px 0px 35px; padding: 0px 15px 5px 15px !important; text-align: center !important; font-size: 19pt; }
 
