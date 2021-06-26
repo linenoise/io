@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 gem "nanoc", '<4'
 gem "kramdown"
 gem "mime-types"
-gem "rdiscount"
+gem "rdiscount", '~> 2.2.0.2'
 gem "builder"
 gem "systemu"
 gem "rack"
