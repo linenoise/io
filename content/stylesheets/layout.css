@@ -202,7 +202,6 @@ footer aside.copyright                          { height: 113px; padding: 0px; }
 footer aside.vcard                              { height: 178px; text-align:center; line-height: 2em; margin-top: 0px; padding-top: 0px; background-color: #FFF; }
 footer aside.vcard h1                           { margin: 25px 0px 0px 0px; padding: 0px; }
 footer aside.vcard h1 a                         { background-image: url("/images/logo-vertical.png"); background-position: center center; background-repeat: no-repeat; display: block; height: 151px; width: 230px; margin-bottom: 40px; margin-left: 32px; text-indent: -9999px; }
-footer aside.vcard p                            { font-family: 'Open Sans Bold'; padding: 0px; margin: 0px; }
 
 
 /* Media Queries: Netbooks and Tablets (landscape)
