@@ -14,7 +14,7 @@ First, clone this codebase
 
 Second, accept the RVM version and gemset, building Ruby 2.2.2 if you need
 
-	$ rvm install ruby-2.2.2
+	$ rvm install ruby-2.7.4
 
 Finally, install Bundler and the rest of the gemset
 
@@ -28,7 +28,8 @@ Maintenance
 
 This codebase uses nanoc to build a tree of static HTML, CSS, and JavaScript resources to be uploaded to the server.  Assets (such as images and recordings) are included in this final build.  Once Bundler has nanoc and friends installed, running a maintenance server is straightforward:
 
-	$ nanoc autocompile
+	$ bundle exec guard
+	$ bundle exec nanoc view
 
 This will automatically compile any changes made to the build and make them available through a lightweight webserver running at http://localhost:3000/.
 

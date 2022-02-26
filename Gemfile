@@ -9,5 +9,6 @@ gem "rack"
 gem 'aws-sdk', '~> 2'
 gem "guard"
 gem "adsf"
+gem "guard-nanoc"
 Encoding.default_external = Encoding::UTF_8
 Encoding.default_internal = Encoding::UTF_8
