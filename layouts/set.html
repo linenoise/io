@@ -9,39 +9,25 @@
   <body>
     <div class="container">
       <%= render '/_header' %>
-  
-      <div class="clearfix">
+
+      <div class="clearfix nine columns">
   	    <div class="full set <%= item.attributes[:mood] %>">
   	      <h1><%= item.attributes[:title] %></h1>
 
-          <table>
-            <tr>
-              <th>Mood</th>
-              <td><%= item.attributes[:mood] %></td>
-            </tr>
-            <tr>
-              <th>Genres</th>
-              <td><%= item.attributes[:genres] %></td>
-            </tr>
-            <tr>
-              <th>Length</th>
-              <td><%= item.attributes[:time] %></td>
-            </tr>
-            <tr>
-              <th>Released</th>
-              <td><%= item.attributes[:date] %></td>
-            </tr>
-          </table>
+          <p>
+            <%= render '_description', :set => item %> played on <%= item.attributes[:date] %>.
+          </p>
+
   	      <p>
   	      	<%= item.attributes[:description] %>
   	      </p>
 
           <h2>Download</h2>
-          <div style="margin-left: 10px;">
-    		  	<a class="button" href="<%= item.attributes[:download] %>">Download this set</a><br />
-    		  </div>
+          <div style="margin-left: 10px;margin-bottom: 0px;">
+            <a class="button" href="<%= item.attributes[:download] %>">Download this set</a><br />
+          </div>
 
-          <h2>Play</h2>
+          <h2>Stream</h2>
           <audio controls>
             <source src="<%= item.attributes[:download] %>" type="audio/mpeg">
           </audio> 
@@ -51,22 +37,26 @@
           	<pre><%= item.attributes[:tracklist] %></pre>
           <% end %>
 
-          <h2>Other sets</h2>
-          
-          <p>You might also like my other <strong><%= item.attributes[:mood] %></strong> sets:</p>
-
-          <table>
-          <% items.select{|i| i.identifier =~ /\/sets\/.+/}.sort{|a,b| b.attributes[:title] <=> a.attributes[:title]}.keep_if{|set| (set.attributes[:mood] == item.attributes[:mood]) && (set.identifier != item.identifier)}.sort{|a,b| a.attributes[:title] <=> b.attributes[:title]}.each do |set| %>
-            <tr>
-              <th><a href="<%= set.identifier %>"><%= set.attributes[:title] %></a></th>
-              <td><%= set.attributes[:time] %></td>
-              <td><%= set.attributes[:genres] %></td>
-            </tr>
-          <% end %>
-          </table>
-
   	    </div>
       </div>
+
+      <div class="clearfix seven columns">
+        <img class="big" src="/images/art/<%= item.attributes[:title] %> 1.png" />
+        <img class="medium" src="/images/art/<%= item.attributes[:title] %> 2.png" />
+        <img class="medium" style="float: right;" src="/images/art/<%= item.attributes[:title] %> 3.png" />
+        <img class="big" src="/images/art/<%= item.attributes[:title] %> 4.png" />
+      </div>
+    </div>
+    <div class="container">
+
+      <div class="clearfix sixteen columns">
+        <h2 style="border-bottom-color: #DDD; margin-left: 10px; margin-bottom: 1em">Her other <%= item.attributes[:mood] %> sets</h2>
+      </div>
+        
+      <% items.select{|i| i.identifier =~ /\/sets\/.+/}.sort{|a,b| b.attributes[:title] <=> a.attributes[:title]}.keep_if{|set| (set.attributes[:mood] == item.attributes[:mood]) && (set.identifier != item.identifier)}.sort{|a,b| a.attributes[:title] <=> b.attributes[:title]}.each do |set| %>
+      <%= render '_tile', :set => set %>
+      <% end %>
+
       <%= render '/_footer' %>
     </div>
   </body>
