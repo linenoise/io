@@ -1,0 +1,14 @@
+<% time = set.attributes[:time].split(':').reverse %>
+<% minutes = time.drop(1)[0].to_i %>
+<% hours = time.drop(2)[0].to_i %>
+<% if (hours > 0) %> <%= hours %> hour<% if hours != 1%>s<% end %> <% end %>
+<% if (hours > 0) & (minutes> 0) %> and <% end %>
+<% if (minutes > 0) %> <%= minutes %> minute<% if minutes != 1%>s<% end %><% end %>
+of
+<% genres = set.attributes[:genres].gsub(/\./, ' ').split(', ').insert(-2,'and').join(', ').gsub(', and,',', and ') %>
+<% if (genres.count(',') == 1) %>
+<%= genres.gsub(',','') %>
+<% else %>
+<%= genres %>
+<% end %>
+music

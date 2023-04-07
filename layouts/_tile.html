@@ -1,0 +1,17 @@
+<div class="eight columns">
+	<div class="<%= set.attributes[:mood] %> set tile">
+	  <a href="<%= set.identifier %>index.html">
+		<img class="small alignleft" src="/images/art/<%= set.attributes[:title] %> 1.png" />
+	  </a>
+
+	  <h3><a href="<%= set.identifier %>index.html"><%= set.attributes[:title] %></a></h3>
+	  
+	  <%= render '_description', :set => set %>
+	  
+	  <div class="listen">
+		<a class="button" href="<%= set.attributes[:download] %>">Download</a>
+		<a class="button" href="<%= set.identifier %>index.html">Stream</a>
+	  </div>
+	
+	</div>
+  </div>
