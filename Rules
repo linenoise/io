@@ -1,49 +1,53 @@
-#!/usr/bin/env ruby
+# encoding: UTF-8
+include Nanoc::Helpers::XMLSitemap
 
 ### COMPILATION RULES
 
-# Don’t filter or layout assets
-compile %r{^/(favicon|robots|stylesheets/.*|javascript/.*|plugins/.*|fonts/.*|images/.*|photos/.*|manifest|browserconfig)/$} do
+# 1. Assets – copy these files verbatim (no filtering or layout).
+compile %r{^/(favicon(\.ico)?|robots(\.txt)?|sitemap(\.xml)?|keybase(\.txt)?|stylesheets/.*|javascript/.*|plugins/.*|fonts/.*|images/.*|photos/.*|manifest(\.json)?|browserconfig(\.xml)?)$} do
+  # No filtering; assets are copied as-is.
 end
 
-compile '/' do
+# 2. Homepage – compile /index.html with ERB and use the default layout.
+compile '/index.html' do
   filter :erb
-  layout 'default'
+  layout '/default.html'
+  write '/index.html'
 end
 
-# Sitemap, RSS feed, and htaccess get filtered with erb, but get no layout.
-compile %r{^/(sitemap|htaccess|feed|itunes_feed|card|identity|calendar)/$} do
+# 3. Sets pages – compile files under /sets/ with ERB and use the "set" layout.
+compile %r{^/sets/.*\.html$} do
   filter :erb
+  layout '/set.html'
+  write @item.identifier.without_ext + '.html'
 end
 
-# Songs get rendered in the music player
-compile %r{^/sets/.*/$} do
+# 4. Other HTML files – compile as ERB and wrap with the default layout.
+compile %r{^/.*\.html$} do
   filter :erb
-  layout 'set'
+  write @item.identifier.without_ext + '/index.html'
 end
 
-
-compile '*' do
-  case item[:extension]
-    when 'md'
-      filter :rdiscount
-    when 'html'
-      filter :erb
-  end
-  layout 'default'
+# 5. Markdown files – process with RDiscount and wrap with the default layout.
+compile %r{^/.*\.md$} do
+  filter :rdiscount
+  layout '/default.html'
+  write @item.identifier.without_ext + '/index.html'
 end
 
-route '/photos/*/', :rep => :thumbnail do
-  item.identifier.chop + '-thumbnail.' + item[:extension]
+### ROUTING RULES
+
+# For assets, simply use the identifier as the output path.
+route %r{^/(favicon(\.ico)?|robots(\.txt)?|sitemap(\.xml)?|keybase(\.txt)?|stylesheets/.*|javascript/.*|plugins/.*|fonts/.*|images/.*|photos/.*|manifest(\.json)?|browserconfig(\.xml)?)$} do
+  item.identifier.to_s
 end
 
-route %r{^/(favicon|robots|sitemap|crypto/.*|stylesheets/.*|javascript/.*|plugins/.*|fonts/.*|images/.*|photos/.*)/$} do
-  ext = item[:extension]
-  item.identifier.chop + '.' + ext
-end
-
+# For all other items, also use the identifier as the output path.
 route '*' do
-  item.identifier + 'index.html'
+  item.identifier.to_s
 end
 
-layout '*', :erb
+### LAYOUT RULES
+
+# Process every layout file in the layouts/ folder as ERB.
+layout '/*', :erb

@@ -15,8 +15,6 @@
 #
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
-guard 'nanoc' do
-  watch('nanoc.yaml') # Change this to config.yaml if you use the old config file name
-  watch('Rules')
-  watch(%r{^(content|layouts|lib)/.*$})
+guard :shell, command: 'bundle exec nanoc compile', all_on_start: true, run_on_modifications: true, name: 'Nanoc' do
+  watch(%r{^(nanoc\.yaml|Rules|content/|layouts/|lib/)})
 end
