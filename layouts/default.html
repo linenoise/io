@@ -4,11 +4,11 @@
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
   <head>
-  <%= render '/_html_head' %>
+  <%= render '/_html_head.html' %>
   </head>
   <body>
     <div class="container">
-      <%= render '/_header' %>
+      <%= render '/_header.html' %>
   
       <!-- <div style="margin: 30px 20px 0px 20px">
         <img src="/images/header.png" style="width: 100%; border-radius: 5px;">
@@ -18,7 +18,7 @@
       <%= yield %>
       </div>
 
-      <%= render '/_footer' %>
+      <%= render '/_footer.html' %>
     </div>
   </body>
 </html>
